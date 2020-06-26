@@ -1,6 +1,4 @@
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
 
@@ -12,18 +10,14 @@ public class Main {
         String[] wordArray = word.split("");
         Arrays.sort(wordArray);
 
-        int counter = 1;
+        Set<String> setOfDuplicates = new HashSet<>();
 
-        HashMap<String, Integer> map = new HashMap<String, Integer>();
-
-        for (int i = 0; i < wordArray.length -1; i++) {
+        for (int i = 0; i < wordArray.length - 1 && i + 1 < wordArray.length; i++) {
             if (wordArray[i].equals(wordArray[i + 1])) {
-                counter++;
-                continue;
-            }
-            if (counter > 1) {
-                System.out.print(wordArray[i] + " = " + counter);
+                setOfDuplicates.add(wordArray[i]);
             }
         }
+
+        setOfDuplicates.forEach(n -> System.out.println(n));
     }
 }
