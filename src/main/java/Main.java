@@ -17,7 +17,7 @@ public class Main {
         HashMap<String, Integer> map = new HashMap<String, Integer>();
 
         for (int i = 0; i < wordArray.length -1; i++) {
-            if (wordArray[i] == wordArray[i + 1]) {
+            if (wordArray[i].equals(wordArray[i + 1])) {
                 counter++;
                 continue;
             }
